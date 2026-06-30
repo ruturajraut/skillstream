@@ -3,6 +3,8 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import authRoutes from './routes/auth.routes.js';
+import cookieParser from 'cookie-parser';
 
 const app = express();
 
@@ -13,8 +15,15 @@ app.use(helmet());
 // 2. CORS – allow requests from frontend (later we'll restrict to specific origin)
 app.use(cors());
 
+app.use(cookieParser());
 // 3. Parse JSON request bodies
 app.use(express.json());
+
+
+
+app.use('/api/auth', authRoutes);
+
+
 
 // 4. Log requests
 if (process.env.NODE_ENV === 'development') {

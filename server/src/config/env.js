@@ -13,6 +13,9 @@ const requiredVars = [
   'CLOUDINARY_CLOUD_NAME',
   'CLOUDINARY_API_KEY',
   'CLOUDINARY_API_SECRET',
+  'JWT_ACCESS_EXPIRES_IN',
+  'JWT_REFRESH_EXPIRES_IN',
+  
 ];
 
 requiredVars.forEach((varName) => {
@@ -27,11 +30,15 @@ export default {
   nodeEnv: process.env.NODE_ENV,
   databaseUrl: process.env.DATABASE_URL,
   mongoUri: process.env.MONGO_URI,
-  jwtAccessSecret: process.env.JWT_ACCESS_SECRET,
-  jwtRefreshSecret: process.env.JWT_REFRESH_SECRET,
+  
   cloudinary: {
     cloudName: process.env.CLOUDINARY_CLOUD_NAME,
     apiKey: process.env.CLOUDINARY_API_KEY,
     apiSecret: process.env.CLOUDINARY_API_SECRET,
+
   },
+  jwtAccessSecret: process.env.JWT_ACCESS_SECRET,
+  jwtRefreshSecret: process.env.JWT_REFRESH_SECRET,
+  jwtAccessExpiresIn: process.env.JWT_ACCESS_EXPIRES_IN,
+  jwtRefreshExpiresIn: process.env.JWT_REFRESH_EXPIRES_IN,
 };
