@@ -20,7 +20,7 @@ const requiredVars = [
 
 requiredVars.forEach((varName) => {
   if (!process.env[varName]) {
-    console.error(`❌ Missing required environment variable: ${varName}`);
+    console.error(` Missing required environment variable: ${varName}`);
     process.exit(1); // fail fast
   }
 });

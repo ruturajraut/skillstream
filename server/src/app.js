@@ -19,8 +19,6 @@ app.use(cookieParser());
 // 3. Parse JSON request bodies
 app.use(express.json());
 
-
-
 app.use('/api/auth', authRoutes);
 
 
